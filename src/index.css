@@ -18,6 +18,10 @@ code {
   width: 600px;
 }
 
+.todo_input {
+  margin: 20px 0;
+}
+
 .rm {
   background: rgb(189, 8, 235);
   border-radius: 50%;

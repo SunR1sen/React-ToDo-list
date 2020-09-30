@@ -1,5 +1,9 @@
 import React, {useState} from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import { Input } from 'antd';
+import 'antd/dist/antd.css';
+
+const { Search } = Input;
 
 function useInputValue(defaultValue = '') {
   const [value, setValue] = useState(defaultValue);
@@ -18,7 +22,6 @@ function AddTodo({onCreate}) {
   const input = useInputValue('')
 
   function submitHandler(event) {
-    event.preventDefault();
 
     if (input.value().trim()) {
       onCreate(input.value());
@@ -28,10 +31,14 @@ function AddTodo({onCreate}) {
   }
 
   return (
-    <form style={{marginBottom: '1rem'}} onSubmit={submitHandler}>
-      <input {...input.bind}/>
-      <button type="Submit">Add todo</button>
-    </form>
+      <Search
+          className='todo_input'
+          placeholder="To do text"
+          enterButton="Add todo"
+          size="large"
+          onSearch={submitHandler}
+          {...input.bind}
+      />
   )
 }
 
