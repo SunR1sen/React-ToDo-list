@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useEffect } from "react";
 import TodoList from "./Todo/Todolist";
 import Context from "./context";
 import Loader from './Loader';
